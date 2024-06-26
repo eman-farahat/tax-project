@@ -5,6 +5,8 @@ library(sandwich)
 library(stargazer)
 library(haven)
 library(tidyr)
+library(texreg)
+library(kableExtra)
 
 tanzania_followup_may2024_v7 <- read_dta("~/Desktop/World Bank embed/Tax Project/DATA/tanzania_followup_may2024_v7.dta")
 
@@ -343,7 +345,7 @@ kbl(combined_table %>% select(-Category), format = "latex", booktabs = TRUE, lin
 treatment_region <- lm(q24_treat_fair ~ treatment_direct_ownrecall * region, data = tanzania_followup_may2024_v7) 
 summary(treatment_region)
 
-
+summary(treatment_region)
 
 ####### 8) latex table
 
